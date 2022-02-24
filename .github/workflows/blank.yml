@@ -1,15 +1,22 @@
-1 name: Build and Publish Docker
-  2 on: [push]
-  3 jobs:
-  4   build:
-  5     runs-on: ubuntu-latest
-  6     steps:
-  7     - uses: actions/checkout@master
-  8     - name: Publish to Docker Repository
-  9       uses: elgohr/Publish-Docker-Github-Action@master
- 10       with:
- 11         name: vsc-level3-fff555c3253da0d7f26db64779d76668-uid
- 12         username: ${{ linrken}
- 13         password: ${{ Ken1922346338 }}
+name: CI
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+
+jobs:
+  test_01sh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: chmod 01sh script
+        run: docker images
+
         
+
 
