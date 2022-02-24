@@ -14,8 +14,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: chmod 01sh script
-        run: docker ps
+      - name: load
+        run: docker load -i mario.tar
+        
+        
+      - name: observe
+        run: docker images
+        
+        
+
 
 
         
